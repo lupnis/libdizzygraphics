@@ -1,7 +1,6 @@
 #ifndef ENDPOINT_H
 #define ENDPOINT_H
 
-
 namespace BasicGraphics {
 namespace Basic {
 
