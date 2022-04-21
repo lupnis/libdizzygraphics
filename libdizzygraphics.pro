@@ -19,13 +19,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     libdizzygraphics.cpp \
     line.cpp \
-    utils/endpoint.cpp
+    base/endpoint.cpp
 
 HEADERS += \
     libdizzygraphics_global.h \
     libdizzygraphics.h \
     line.h \
-    utils/endpoint.h
+    base/endpoint.h
 
 # Default rules for deployment.
 unix {
