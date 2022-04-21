@@ -24,22 +24,22 @@ public:
     bool operator!=(EndPoint& _);
 
     /*Calculative Operators*/
-    EndPoint operator+(EndPoint& _);
-    EndPoint operator+(T& _);
-    EndPoint operator+=(EndPoint& _);
-    EndPoint operator+=(T& _);
-    EndPoint operator-(EndPoint& _);
-    EndPoint operator-(T& _);
-    EndPoint operator-=(EndPoint& _);
-    EndPoint operator-=(T& _);
-    EndPoint operator*(EndPoint& _);
-    EndPoint operator*(T& _);
-    EndPoint operator*=(EndPoint& _);
-    EndPoint operator*=(T& _);
-    EndPoint operator/(EndPoint& _);
-    EndPoint operator/(T& _);
-    EndPoint operator/=(EndPoint& _);
-    EndPoint operator/=(T& _);
+    EndPoint& operator+(EndPoint& _);
+    EndPoint& operator+(T& _);
+    void operator+=(EndPoint& _);
+    void operator+=(T& _);
+    EndPoint& operator-(EndPoint& _);
+    EndPoint& operator-(T& _);
+    void operator-=(EndPoint& _);
+    void operator-=(T& _);
+    EndPoint& operator*(EndPoint& _);
+    EndPoint& operator*(T& _);
+    void operator*=(EndPoint& _);
+    void operator*=(T& _);
+    EndPoint& operator/(EndPoint& _);
+    EndPoint& operator/(T& _);
+    void operator/=(EndPoint& _);
+    void operator/=(T& _);
 
     inline size_t get_dimension() { return this->_dimension; }
 private:

@@ -90,5 +90,8 @@ bool EndPoint<T>::operator!=(EndPoint<T>& _) {
 }
 
 
+
+
+
 }//namespace Basic
 }//namespace BasicGraphics
