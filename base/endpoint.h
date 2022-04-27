@@ -1,8 +1,6 @@
 #ifndef ENDPOINT_H
 #define ENDPOINT_H
 
-#include <vector>
-
 namespace BasicGraphics {
 namespace Basic {
 
@@ -14,34 +12,26 @@ public:
     EndPoint(T* coordinates, size_t dimension);
     EndPoint(size_t dimension);
     EndPoint(size_t dimension, T fill_num);
-    EndPoint(std::vector<T>& coordinates);
     ~EndPoint() throw() { delete _coordinates; }
 
     /*Basic Operators*/
     T& operator[](unsigned int index);
-    void operator=(EndPoint& _);
-    bool operator==(EndPoint& _);
-    bool operator!=(EndPoint& _);
+    void operator=(const EndPoint &rhs);
+    bool operator==(const EndPoint &rhs);
+    bool operator!=(const EndPoint &rhs);
 
     /*Calculative Operators*/
-    EndPoint& operator+(EndPoint& _);
-    EndPoint& operator+(T& _);
-    void operator+=(EndPoint& _);
-    void operator+=(T& _);
-    EndPoint& operator-(EndPoint& _);
-    EndPoint& operator-(T& _);
-    void operator-=(EndPoint& _);
-    void operator-=(T& _);
-    EndPoint& operator*(EndPoint& _);
-    EndPoint& operator*(T& _);
-    void operator*=(EndPoint& _);
-    void operator*=(T& _);
-    EndPoint& operator/(EndPoint& _);
-    EndPoint& operator/(T& _);
-    void operator/=(EndPoint& _);
-    void operator/=(T& _);
+    EndPoint& operator+=(const EndPoint &rhs);
+    EndPoint& operator+=(const T &rhs);
+    EndPoint& operator-=(const EndPoint &rhs);
+    EndPoint& operator-=(const T &rhs);
+    EndPoint& operator*=(const EndPoint &rhs);
+    EndPoint& operator*=(const T &rhs);
+    EndPoint& operator/=(const EndPoint &rhs);
+    EndPoint& operator/=(const T &rhs);
 
-    inline size_t get_dimension() { return this->_dimension; }
+    size_t get_dimension() { return this->_dimension; }
+
 private:
     T* _coordinates;
     size_t _dimension;
