@@ -47,7 +47,9 @@ inline T* to_endpoint(std::vector<T> coordinates) {
 
 template<class T>
 T& EndPoint<T>::operator[](unsigned int index) {
-    if(index <0 || index>=this->_dimension) throw std::out_of_range("index out of range");
+    if(index < 0 || index >= this->_dimension) {
+        throw std::out_of_range("index out of range");
+    }
     return this->_coordinates[index];
 }
 
@@ -57,7 +59,7 @@ void EndPoint<T>::operator=(const EndPoint<T> &rhs) {
     size_t n = rhs.get_dimension();
     this->_dimension = n;
     this->_coordinates = new T[n];
-    for(int i = 0; i < n;i++) {
+    for(int i = 0; i < n; i++) {
         this->_coordinates[i] =rhs[i];
     }
 
@@ -65,7 +67,7 @@ void EndPoint<T>::operator=(const EndPoint<T> &rhs) {
 
 template<class T>
 bool EndPoint<T>::operator==(const EndPoint<T> &rhs) {
-    if(this->_dimension!=rhs.get_dimension()) {
+    if(this->_dimension != rhs.get_dimension()) {
         return false;
     }
     for(int i = 0; i < this->_dimension; i++) {
@@ -78,7 +80,7 @@ bool EndPoint<T>::operator==(const EndPoint<T> &rhs) {
 
 template<class T>
 bool EndPoint<T>::operator!=(const EndPoint<T> &rhs) {
-    if(this->_dimension!=rhs.get_dimension()) {
+    if(this->_dimension != rhs.get_dimension()) {
         return true;
     }
     for(int i = 0; i < this->_dimension; i++) {
@@ -91,7 +93,7 @@ bool EndPoint<T>::operator!=(const EndPoint<T> &rhs) {
 
 template<class T>
 EndPoint<T>& EndPoint<T>::operator+=(const EndPoint<T> &rhs) {
-    if(this->_dimension!=rhs.get_dimension()) {
+    if(this->_dimension != rhs.get_dimension()) {
         throw std::exception("dimension not equal");
     }
     for(int i = 0; i < this->_dimension; i++) {
@@ -102,7 +104,7 @@ EndPoint<T>& EndPoint<T>::operator+=(const EndPoint<T> &rhs) {
 
 template<class T>
 EndPoint<T>& EndPoint<T>::operator+=(const T &rhs) {
-    if(this->_dimension!=rhs.get_dimension()) {
+    if(this->_dimension != rhs.get_dimension()) {
         throw std::exception("dimension not equal");
     }
     for(int i = 0; i < this->_dimension; i++) {
@@ -113,7 +115,7 @@ EndPoint<T>& EndPoint<T>::operator+=(const T &rhs) {
 
 template<class T>
 EndPoint<T>& EndPoint<T>::operator-=(const EndPoint<T> &rhs) {
-    if(this->_dimension!=rhs.get_dimension()) {
+    if(this->_dimension != rhs.get_dimension()) {
         throw std::exception("dimension not equal");
     }
     for(int i = 0; i < this->_dimension; i++) {
@@ -124,7 +126,7 @@ EndPoint<T>& EndPoint<T>::operator-=(const EndPoint<T> &rhs) {
 
 template<class T>
 EndPoint<T>& EndPoint<T>::operator-=(const T &rhs) {
-    if(this->_dimension!=rhs.get_dimension()) {
+    if(this->_dimension != rhs.get_dimension()) {
         throw std::exception("dimension not equal");
     }
     for(int i = 0; i < this->_dimension; i++) {
@@ -135,7 +137,7 @@ EndPoint<T>& EndPoint<T>::operator-=(const T &rhs) {
 
 template<class T>
 EndPoint<T>& EndPoint<T>::operator*=(const EndPoint<T> &rhs) {
-    if(this->_dimension!=rhs.get_dimension()) {
+    if(this->_dimension != rhs.get_dimension()) {
         throw std::exception("dimension not equal");
     }
     for(int i = 0; i < this->_dimension; i++) {
@@ -146,7 +148,7 @@ EndPoint<T>& EndPoint<T>::operator*=(const EndPoint<T> &rhs) {
 
 template<class T>
 EndPoint<T>& EndPoint<T>::operator*=(const T &rhs) {
-    if(this->_dimension!=rhs.get_dimension()) {
+    if(this->_dimension != rhs.get_dimension()) {
         throw std::exception("dimension not equal");
     }
     for(int i = 0; i < this->_dimension; i++) {
@@ -157,7 +159,7 @@ EndPoint<T>& EndPoint<T>::operator*=(const T &rhs) {
 
 template<class T>
 EndPoint<T>& EndPoint<T>::operator/=(const EndPoint<T> &rhs) {
-    if(this->_dimension!=rhs.get_dimension()) {
+    if(this->_dimension != rhs.get_dimension()) {
         throw std::exception("dimension not equal");
     }
     for(int i = 0; i < this->_dimension; i++) {
@@ -168,7 +170,7 @@ EndPoint<T>& EndPoint<T>::operator/=(const EndPoint<T> &rhs) {
 
 template<class T>
 EndPoint<T>& EndPoint<T>::operator/=(const T &rhs) {
-    if(this->_dimension!=rhs.get_dimension()) {
+    if(this->_dimension != rhs.get_dimension()) {
         throw std::exception("dimension not equal");
     }
     for(int i = 0; i < this->_dimension; i++) {

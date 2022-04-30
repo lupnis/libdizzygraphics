@@ -15,7 +15,6 @@ public:
     Vector(T* start, T* end, size_t dimension);
     Vector(T* end, size_t dimension);
     Vector(size_t dimension);
-    Vector(size_t dimension, T fill_num);
     Vector(EndPoint<T> start, EndPoint<T> end);
     Vector(EndPoint<T> end);
     ~Vector() throw() {}
