@@ -53,10 +53,11 @@ T& EndPoint<T>::operator[](unsigned int index) {
 
 template<class T>
 void EndPoint<T>::operator=(const EndPoint<T> &rhs) {
-    if(this->_dimension!=rhs.get_dimension()) {
-        throw std::exception("dimension not equal");
-    }
-    for(int i = 0; i <this->_dimension;i++) {
+    delete this->_coordinates;
+    size_t n = rhs.get_dimension();
+    this->_dimension = n;
+    this->_coordinates = new T[n];
+    for(int i = 0; i < n;i++) {
         this->_coordinates[i] =rhs[i];
     }
 

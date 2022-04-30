@@ -18,12 +18,27 @@ public:
     Vector(size_t dimension, T fill_num);
     Vector(EndPoint<T> start, EndPoint<T> end);
     Vector(EndPoint<T> end);
+    ~Vector() throw() {}
 
     /*Basic Operators*/
     T& operator[](unsigned int index);
     void operator=(const Vector &rhs);
     bool operator==(const Vector &rhs);
     bool operator!=(const Vector &rhs);
+
+    /*Calculative Operators*/
+    Vector& operator+=(const Vector &rhs);
+    Vector& operator+=(const T &rhs);
+    Vector& operator-=(const Vector &rhs);
+    Vector& operator-=(const T &rhs);
+    Vector& operator*=(const Vector &rhs);
+    Vector& operator*=(const T &rhs);
+    Vector& operator/=(const Vector &rhs);
+    Vector& operator/=(const T &rhs);
+
+    size_t get_dimension() {
+        return this->pstart.get_dimension();
+    }
 
 private:
     EndPoint<T> pstart, pend;
